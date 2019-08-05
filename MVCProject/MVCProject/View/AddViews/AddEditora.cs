@@ -1,0 +1,33 @@
+﻿using MVCProject.Model;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace MVCProject.View.AddViews
+{
+    public partial class AddEditora : Form
+    {
+        public AddEditora()
+        {
+            InitializeComponent();
+        }
+
+        public Editora editoraRow;
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            editoraRow = new Editora
+            {
+                Nome = tbAddNome.Text,
+                Descricao = tbAddDesc.Text
+            };
+            this.Close();
+        }
+    }
+}
