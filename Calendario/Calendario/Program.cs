@@ -14,33 +14,40 @@ namespace Calendario
             int mes = 0;
             int dia = 0;
 
-            if (ano%4 != 0)
+            if (ano % 4 != 0)
             {
                 switch (mes)
                 {
                     case 4:
-                        if (dia == 30)
-                        {
-                            dia = 0;
-                            mes++;
-                        }
-                        else
-                        {
-                            dia++; 
-                        }
+                        Calculo(dia);
+                        break;
+                    case 6:
+                        Calculo(dia);
+                        break;
+                    case 9:
+                        Calculo(dia);
+                        break;
+                    case 11:
+                        Calculo(dia);
                         break;
                     default:
+                        break;
                 }
             }//se for bi
-            
-            
 
-               
-
-                   
-            
-            
-
+        }
+        public static int Calculo(int dia,int mes)
+        {
+            if (dia == 30)
+            {
+                dia = 1;
+                mes++;
+                return dia, mes;
+            }
+            else
+            {
+                dia++;
+            }
         }
     }
 }
